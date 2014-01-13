@@ -33,7 +33,7 @@ define(function() {
           return require([path + '.' + pluginId + '.js' + queryString], load, load.error);
 
         // only add extension if a moduleID not a path
-        if (ext && name.substr(0, 1) != '/' && !name.match(/:\/\//)) {
+        if (ext && !name.match(/:\/\//)) {
           var validExt = false;
           if (allowExts) {
             for (var i = 0; i < allowExts.length; i++) {
